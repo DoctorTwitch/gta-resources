@@ -32,15 +32,15 @@ Citizen.CreateThread(function()
                         Citizen.Wait(0)
                     end
                 else
-                    for i = 1, #vehiclePlate do
-                        local vPlate = all_trim(vehiclePlate[i].plate)
+                    for k,v in pairs (vehiclePlate) do
+                        local vPlate = all_trim(v.plate)
                         local vFront = all_trim(GetVehicleNumberPlateText(vehicle))
                         if vPlate == vFront then
                             myVeh = true
                         end
                     end
                 end
-                if not Config.CheckOwnership or (Config.AllowPolice and (PlayerData.job.name == "police" or PlayerData.job.name == "CIA")) or (Config.CheckOwnership and myVeh) then
+                if not Config.CheckOwnership or (Config.AllowPolice and (PlayerData.job.name == "police")) or (Config.CheckOwnership and myVeh) then
                     local locked = GetVehicleDoorLockStatus(vehicle) == 2
                     if not locked then
                         local class = GetVehicleClass(vehicle)
@@ -78,5 +78,4 @@ end)
 RegisterNetEvent("disc_trunk_inventory:setOwnedVehicule")
 AddEventHandler(  "disc_trunk_inventory:setOwnedVehicule",function(vehicle)
     vehiclePlate = vehicle
-    --print("vehiclePlate: ", ESX.DumpTable(vehiclePlate))
 end)
