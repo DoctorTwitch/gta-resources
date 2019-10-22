@@ -54,3 +54,31 @@ Config.Seize = {
     black_money = true,
     cash = true
 }
+
+Config.CheckOwnership = true -- If true, Only owner of vehicle can store items in trunk.
+Config.AllowPolice = true -- If true, police will be able to search players' trunks.
+
+Config.VehicleSlot = {
+    [0] = 10, --Compact
+    [1] = 15, --Sedan
+    [2] = 20, --SUV
+    [3] = 15, --Coupes
+    [4] = 5, --Muscle
+    [5] = 5, --Sports Classics
+    [6] = 5, --Sports
+    [7] = 5, --Super
+    [8] = 5, --Motorcycles
+    [9] = 10, --Off-road
+    [10] = 20, --Industrial
+    [11] = 20, --Utility
+    [12] = 30, --Vans
+    [13] = 0, --Cycles
+    [14] = 0, --Boats
+    [15] = 0, --Helicopters
+    [16] = 0, --Planes
+    [17] = 20, --Service
+    [18] = 20, --Emergency
+    [19] = 90, --Military
+    [20] = 0, --Commercial
+    [21] = 0 --Trains
+}
